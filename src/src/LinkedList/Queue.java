@@ -1,19 +1,33 @@
 package src.LinkedList;
 
 public class Queue extends LinkedList {
-    Node head, tail;
 
+    // constructor method
     public Queue() {
-        head = null;
-        tail = null;
     }
 
-    public void enqueue(int key)
+    public void enqueue(int d)
     {
-        AddFirst(key);
+        // use LinkedList.addFirst(data d)
+        addFirst(d);
     }
 
-    public void deque()
+    public Node dequeue()
     {
+        Node current;
+
+        if (head == null) {
+            return null;
+        }
+
+        current = head;
+        head = head.next;
+        counter--;
+
+        return current;
+    }
+
+    public boolean isEmpty(){
+        return counter == 0;
     }
 }
